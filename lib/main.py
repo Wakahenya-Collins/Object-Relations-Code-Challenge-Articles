@@ -5,7 +5,7 @@ from magazine.magazine import Magazine
 def main():
     # Creating authors
     author1 = Author("John mbugua")
-    author2 = Author("Jane wambua")
+    author2 = Author("Jane mwongeli")
 
     # Creating magazines
     magazine1 = Magazine("Tech Magazine", "Technology")
