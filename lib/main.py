@@ -15,6 +15,7 @@ def main():
     author1.add_article(magazine1, "Python Programming")
     author1.add_article(magazine2, "Quantum Mechanics")
     author1.add_article(magazine1, "Robotics")
+    author1.add_article(magazine1, "AI integration")
     author2.add_article(magazine1, "AI and Ethics")
 
     # Displaying authors and their contributions
@@ -41,19 +42,19 @@ def main():
         print(f"{magazine.name()}: {', '.join(article_titles)}")
 
     ## Displaying authors who have written more than 2 articles for each magazine
-print("\nAuthors contributing more than 2 articles for each magazine:")
-for magazine in Magazine.all():
-    print(f"{magazine.name()} ({magazine.category()}):", end=" ")
-    contributing_authors = []
+    print("\nAuthors contributing more than 2 articles for each magazine:")
+    for magazine in Magazine.all():
+        print(f"{magazine.name()} ({magazine.category()}):", end=" ")
+        contributing_authors = []
 
-    for author in magazine.contributors():
-        if len(author.articles()) > 2:
-            contributing_authors.append(author.name())
+        for author in magazine.contributors():
+            if len(author.articles()) > 2:
+                contributing_authors.append(author.name())
 
-    if contributing_authors:
-        print(", ".join(contributing_authors))
-    else:
-        print("None")
+        if contributing_authors:
+            print(", ".join(contributing_authors))
+        else:
+            print("None")
 
 if __name__ == "__main__":
     main()
